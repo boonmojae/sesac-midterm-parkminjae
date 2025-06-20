@@ -22,10 +22,10 @@ class TodoController {
   //글 생성
   async createTodo(req, res, next) {
     try {
-      console.log("userID und");
       const { title, description } = req.body;
       const userId = req.user;
-
+      
+      console.log(userId);
       const newTodo = await todoService.todoCreate(title, description, userId);
 
       return res.json({
